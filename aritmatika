@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Aritmatika {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input angka
+        System.out.print("Masukkan angka pertama: ");
+        double angka1 = input.nextDouble();
+
+        System.out.print("Masukkan angka kedua: ");
+        double angka2 = input.nextDouble();
+
+        // Pilih operasi
+        System.out.println("Pilih operasi (+, -, *, /): ");
+        char operasi = input.next().charAt(0);
+
+        double hasil;
+
+        switch (operasi) {
+            case '+':
+                hasil = angka1 + angka2;
+                System.out.println("Hasil: " + hasil);
+                break;
+            case '-':
+                hasil = angka1 - angka2;
+                System.out.println("Hasil: " + hasil);
+                break;
+            case '*':
+                hasil = angka1 * angka2;
+                System.out.println("Hasil: " + hasil);
+                break;
+            case '/':
+                if (angka2 != 0) {
+                    hasil = angka1 / angka2;
+                    System.out.println("Hasil: " + hasil);
+                } else {
+                    System.out.println("Kesalahan: Pembagian dengan nol!");
+                }
+                break;
+            default:
+                System.out.println("Operasi tidak dikenali.");
+        }
+
+        input.close();
+    }
+}
